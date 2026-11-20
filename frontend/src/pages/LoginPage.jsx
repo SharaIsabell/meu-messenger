@@ -6,7 +6,12 @@ const LABELS = { login: 'Entrar', register: 'Criar conta', recover: 'Redefinir s
 export default function LoginPage() {
   const { login, register, recover, startSession } = useAuth();
   const [mode, setMode] = useState('login');
-  const [form, setForm] = useState({ username: '', password: '', recoveryCode: '' });
+  const [form, setForm] = useState({
+    username: '',
+    password: '',
+    recoveryCode: '',
+    inviteCode: '',
+  });
   const [pending, setPending] = useState(null); // aguardando a pessoa guardar o código
   const [error, setError] = useState('');
 
@@ -17,7 +22,9 @@ export default function LoginPage() {
     setError('');
     try {
       if (mode === 'login') await login(form.username, form.password);
-      if (mode === 'register') setPending(await register(form.username, form.password));
+      if (mode === 'register') {
+        setPending(await register(form.username, form.password, form.inviteCode));
+      }
       if (mode === 'recover') {
         setPending(await recover(form.username, form.recoveryCode, form.password));
       }
@@ -64,6 +71,13 @@ export default function LoginPage() {
         onChange={update('password')}
         autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
       />
+      {mode === 'register' && (
+        <input
+          placeholder="Código de convite"
+          value={form.inviteCode}
+          onChange={update('inviteCode')}
+        />
+      )}
       {error && <p className="error">{error}</p>}
       <button type="submit">{LABELS[mode]}</button>
 

@@ -20,3 +20,7 @@ export const recoverSchema = z.object({
 });
 
 export const addContactSchema = z.object({ username });
+
+export const registerSchema = credentialsSchema.extend({
+  inviteCode: z.string().trim().optional(),
+});

@@ -24,8 +24,18 @@ function publicUser(user) {
   return { id: user.id, username: user.username };
 }
 
+function safeEqual(a, b) {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  return bufA.length === bufB.length && crypto.timingSafeEqual(bufA, bufB);
+}
+
 export const authService = {
-  async register({ username, password }) {
+  async register({ username, password, inviteCode }) {
+    if (env.inviteCode && !safeEqual(inviteCode ?? '', env.inviteCode)) {
+      throw new AppError('Código de convite inválido.', 403);
+    }
+
     const existing = await userRepository.findByUsername(username);
     if (existing) throw new AppError('Este nome de usuário já está em uso.', 409);
 

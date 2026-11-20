@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
     async login(username, password) {
       startSession(await authApi.login(username, password));
     },
-    register: (username, password) => authApi.register(username, password),
+    register: (username, password, inviteCode) => authApi.register(username, password, inviteCode),
     recover: (username, code, newPassword) => authApi.recover(username, code, newPassword),
     logout() {
       localStorage.removeItem(STORAGE_KEY);
