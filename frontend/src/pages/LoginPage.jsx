@@ -42,7 +42,7 @@ export default function LoginPage() {
 
   return (
     <form className="card" onSubmit={handleSubmit}>
-      <h1>Messenger</h1>
+      <h1>SH Messenger</h1>
       <input
         placeholder="Nome de usuário"
         value={form.username}
