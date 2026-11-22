@@ -28,7 +28,6 @@ Messenger web em tempo real que funciona **sem número de telefone e sem e-mail*
 - [Scripts disponíveis](#scripts-disponíveis)
 - [Deploy](#deploy)
 - [Roadmap](#roadmap)
-- [Licença](#licença)
 - [Autoria](#autoria)
 
 ---
@@ -349,10 +348,6 @@ Cada `git push` na branch `main` publica automaticamente a nova versão no Rende
 - [ ] Criptografia de ponta a ponta
 - [ ] Testes automatizados da camada de serviços
 
-## Licença
-
-Distribuído sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## Autoria
 
-Desenvolvido por **[Shara Isabell](https://github.com/SharaIsabell)**.
+Desenvolvido por **[Shara Isabell Alves de Oliveira](https://github.com/SharaIsabell)**.
