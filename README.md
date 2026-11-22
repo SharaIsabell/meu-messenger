@@ -28,7 +28,6 @@ Messenger web em tempo real que funciona **sem número de telefone e sem e-mail*
 - [Scripts disponíveis](#scripts-disponíveis)
 - [Deploy](#deploy)
 - [Roadmap](#roadmap)
-- [Autoria](#autoria)
 
 ---
 
@@ -347,7 +346,3 @@ Cada `git push` na branch `main` publica automaticamente a nova versão no Rende
 - [ ] Notificações push no celular
 - [ ] Criptografia de ponta a ponta
 - [ ] Testes automatizados da camada de serviços
-
-## Autoria
-
-Desenvolvido por **[Shara Isabell Alves de Oliveira](https://github.com/SharaIsabell)**.
